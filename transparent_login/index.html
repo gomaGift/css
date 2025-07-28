@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent Login</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <main class="full-screen">
+        <div class="login-content">
+        <h1 >Welcome</h1>
+        <form action="/login" method="post" class="input-form">
+
+            <div class="label-input success">
+            <label for="username">Email:</label>
+            <input type="text" id="username" name="username" required>
+            <span>success</span>
+            </div>
+
+            <div class="label-input error">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <span>wrong password</span>
+            </div>
+
+            <button class="login-button" type="submit">Login</button>
+        </form>
+        </div>
+    </main>
+
+</body>
+</html>
