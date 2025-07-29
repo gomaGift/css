@@ -7,27 +7,23 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <main class="full-screen">
-        <div class="login-content">
-        <h1 >Welcome</h1>
-        <form action="/login" method="post" class="input-form">
-
+<main class="fullscreen">
+    <div class="login-container">
+        <h1 class="login-header">Welcome</h1>
+        <form action="submit" class="login-form">
             <div class="label-input success">
-            <label for="username">Email:</label>
-            <input type="text" id="username" name="username" required>
-            <span>success</span>
+                <label for="">Email</label>
+                <input type="text">
+                <span>valid email</span>
             </div>
-
             <div class="label-input error">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <span>wrong password</span>
+                <label for="">password</label>
+                <input type="password">
+                <span>invalid password</span>
             </div>
-
-            <button class="login-button" type="submit">Login</button>
+            <button type="submit">login</button>
         </form>
-        </div>
-    </main>
-
+    </div>
+</main>
 </body>
 </html>
