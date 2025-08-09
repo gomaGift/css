@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --header-color: rgb(26, 19, 10);
+  --header-bg-color: rgb(77, 76, 76);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-color);
+  padding: 1rem 1rem;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.left-header-items,
+.mid-header-items,
+.right-header-items {
+  display: flex;
+  align-items: center;
+}
+
+.left-header-items {
+  padding-left: 0.5rem;
+}
+
+.youtube-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.youtube-logo > img {
+  height: 25px;
+}
+
+.youtube-logo > span {
+  color: white;
+  font-size: 1.4rem;
+}
+
+.mid-header-items {
+  flex-grow: 1;
+  justify-content: center;
+  gap: 1rem;
+  transition: all 0.5s ease;
+  max-width: 600px;
+}
+
+.input-form {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.input-form input {
+  border-radius: 30px 0 0 30px;
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  outline: 1px solid gray;
+  background-color: rgb(32, 32, 32);
+}
+
+/* ✅ Collapse only at very small screen sizes */
+
+.search-btn {
+  border-radius: 0 30px 30px 0;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--header-bg-color);
+  cursor: pointer;
+}
+
+.voice-search-btn {
+  background: var(--header-bg-color);
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 60%;
+}
+
+.voice-search-btn img {
+  height: 24px;
+}
+
+.right-header-items {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.create-btn {
+  display: flex;
+  align-items: center;
+  background-color: var(--header-bg-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 0.9rem 0.5rem 0.7rem;
+  border-radius: 2rem;
+}
+.notifications,
+.user-profile {
+  background: none;
+  border: none;
+  color: white;
+
+  cursor: pointer;
+}
+
+.create-btn img,
+.notifications img,
+.user-profile img {
+  height: 24px;
+}
+
+/* ✅ Responsive Behavior: Collapse Search Input Only */
+
+@media (max-width: 500px) {
+  .input-form input {
+    display: none;
+  }
+
+  .input-form button {
+    background-color: var(--header-color);
+  }
+
+  .voice-search-btn {
+    background: none;
+  }
+
+  .input-form {
+    flex-grow: 0;
+  }
+}
+
+main {
+  display: flex;
+  background-color: var(--header-color);
+}
+
+
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--header-color);
+  gap: 1.5rem;
+  padding: 0.5rem;
+  flex: 0 0 72px; 
+  position: fixed;
+  top: 64px; 
+  left: 0;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+
+.side-bar > * {
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: var(--header-color);
+}
+
+.side-bar > * > img {
+  height: 24px;
+}
+
+.home,
+.shorts,
+.subs,
+.account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.6rem;
+  padding: 0.7rem 0.1rem;
+}
+
+.side-bar > *:hover {
+  background-color: gray;
+  border-radius: 0.3rem;
+}
+
+.categories {
+  position: fixed;          /* Fully fixed on screen */
+  top: 64px;                 /* Match your header’s height */
+  left: 72px;                /* Width of sidebar */
+  right: 0;
+  background-color: var(--header-color);
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  z-index: 100;
+}
+
+/* Hide scrollbar (Chrome, Edge) */
+.categories::-webkit-scrollbar {
+  display: none;
+}
+
+.categories > * {
+  text-decoration: none;
+  background-color: rgb(51, 50, 50);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.card-body {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  color: white;
+}
+
+.vid-thumbnail {
+  border-radius: 10px;
+}
+
+.user-thumbnail {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.vid-description {
+  font-weight: 450;
+}
+
+
+p span {
+  font-size: small;
+  font-weight: 350;
+}
+
+
+.main-section {
+  flex-grow: 1;
+  width: 100%;
+  background-color: aliceblue;
+  padding-left: 72px; /* match sidebar width */
+}
+
+
+.video-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* smaller min width */
+  gap: 1.5rem;
+  padding: 6rem 1rem 1rem 1rem; 
+  background-color: var(--header-color);
+}
+
+
+.card-header > img {
+  width: 100%; /* responsive image width */
+  max-height: 300px; /* keep aspect ratio */
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  display: block;
+  object-fit: center;
+  min-width: 200px;
+}
+
+.card {
+  background-color: transparent;
+  overflow: hidden;
+  
+}
